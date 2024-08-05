@@ -1,9 +1,21 @@
-name: Events Demo 1
-on: 
-  # toda vez um pull requesto for aberto será executado
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    paths-ignore:
+      - '.github/workflows/*'
+      - '.gitignore'
+      - docs
   pull_request:
     types:
       - opened
+    branches: 
+      - main
+      - 'dev-*'
+      - 'feat/**'
   workflow_dispatch:
 
 jobs:
